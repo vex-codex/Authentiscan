@@ -1,63 +1,69 @@
 <div align="center">
 
-# 🔍 AuthentiScan
+# AuthentiScan
 
-### AI-Powered Product & Review Verification System
+### AI-Powered Product Authenticity & Review Verification System
 
-Verify product authenticity and detect fake reviews using Artificial Intelligence and Machine Learning.
+<p align="center">
+Detect counterfeit products and misleading reviews using Machine Learning and Artificial Intelligence.
+</p>
 
-![Python](https://img.shields.io/badge/Python-3.11-blue?style=for-the-badge&logo=python)
-![FastAPI](https://img.shields.io/badge/FastAPI-Backend-green?style=for-the-badge&logo=fastapi)
-![JavaScript](https://img.shields.io/badge/JavaScript-Frontend-yellow?style=for-the-badge&logo=javascript)
-![License](https://img.shields.io/badge/License-MIT-red?style=for-the-badge)
+<p align="center">
+
+![Python](https://img.shields.io/badge/Python-3.11-3776AB?style=flat-square&logo=python&logoColor=white)
+![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white)
+![TensorFlow](https://img.shields.io/badge/TensorFlow-FF6F00?style=flat-square&logo=tensorflow&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
+![License](https://img.shields.io/badge/License-MIT-blue?style=flat-square)
+
+</p>
+
+---
+
+<img src="screenshots/banner.gif" width="900"/>
+
+*A secure AI-powered platform for verifying product authenticity and detecting fake reviews.*
 
 </div>
 
 ---
 
-# 📖 Overview
+# Overview
 
-**AuthentiScan** is an AI-powered web application that helps users verify product authenticity and identify fake or misleading reviews before making purchasing decisions.
+AuthentiScan is a web application that combines Artificial Intelligence and Machine Learning to help users identify counterfeit products and detect fake or manipulated customer reviews before making purchasing decisions.
 
-The application combines Machine Learning, Natural Language Processing (NLP), and a modern web interface to improve online shopping safety and reduce fraudulent product listings.
-
----
-
-# ✨ Features
-
-✅ Product Authenticity Detection
-
-✅ Fake Review Detection
-
-✅ Machine Learning Powered Analysis
-
-✅ Secure Login System
-
-✅ FastAPI Backend
-
-✅ Responsive User Interface
-
-✅ Image Upload Support
-
-✅ Easy-to-use Dashboard
+The platform provides an intuitive interface where users can analyze products, verify authenticity, and receive AI-generated insights within seconds.
 
 ---
 
-# 🛠️ Tech Stack
+# Key Features
 
-| Category | Technologies |
-|-----------|-------------|
-| Frontend | HTML, CSS, JavaScript |
+| Feature | Description |
+|----------|-------------|
+| Product Verification | Detects counterfeit products using a trained deep learning model. |
+| Fake Review Detection | Identifies suspicious and AI-generated reviews using NLP. |
+| Secure Authentication | User login and authentication system. |
+| FastAPI Backend | Lightweight REST API for efficient processing. |
+| Interactive Interface | Clean and responsive frontend built using HTML, CSS and JavaScript. |
+| Machine Learning Models | TensorFlow and Scikit-Learn powered prediction models. |
+
+---
+
+# Technology Stack
+
+| Layer | Technologies |
+|--------|--------------|
+| Frontend | HTML5, CSS3, JavaScript |
 | Backend | Python, FastAPI |
+| Machine Learning | TensorFlow, Scikit-Learn |
 | Database | SQLite |
-| AI/ML | TensorFlow, Scikit-learn |
-| Model Files | Keras (.keras), Pickle (.pkl) |
+| Development | VS Code, Git, GitHub |
 
 ---
 
-# 📂 Project Structure
+# Repository Structure
 
-```
+```text
 AuthentiScan
 │
 ├── app.js
@@ -71,39 +77,33 @@ AuthentiScan
 ├── server.py
 ├── styles.css
 ├── vectorizer.pkl
-├── LICENSE
-└── README.md
+├── README.md
+└── LICENSE
 ```
 
 ---
 
-# 🚀 Installation
+# Getting Started
 
-## 1️⃣ Clone the Repository
+## Clone the Repository
 
 ```bash
 git clone https://github.com/vex-codex/Authentiscan.git
 ```
 
----
-
-## 2️⃣ Open the Project
+Move into the project directory.
 
 ```bash
 cd Authentiscan
 ```
 
----
-
-## 3️⃣ Create a Virtual Environment
+Create a virtual environment.
 
 ```bash
 python -m venv .venv
 ```
 
----
-
-## 4️⃣ Activate the Virtual Environment
+Activate the environment.
 
 ### Windows
 
@@ -111,33 +111,25 @@ python -m venv .venv
 .\.venv\Scripts\Activate.ps1
 ```
 
-### macOS/Linux
+### Linux / macOS
 
 ```bash
 source .venv/bin/activate
 ```
 
----
-
-## 5️⃣ Install Dependencies
+Install dependencies.
 
 ```bash
 pip install -r requirements.txt
 ```
 
-If `requirements.txt` is not available, install the required packages manually.
-
----
-
-## 6️⃣ Run the Application
+Run the application.
 
 ```bash
 python server.py
 ```
 
----
-
-## 7️⃣ Open in Browser
+Open your browser.
 
 ```
 http://127.0.0.1:8000
@@ -145,53 +137,45 @@ http://127.0.0.1:8000
 
 ---
 
-# 🤖 Machine Learning Models
+# Machine Learning Models
 
-The project includes trained machine learning models for:
-
-- Product Authenticity Detection
-- Fake Review Classification
-- Text Vectorization using NLP
-
-Model Files:
-
-- fake_product_detector.keras
-- review_model.pkl
-- vectorizer.pkl
+| Model | Purpose |
+|--------|---------|
+| fake_product_detector.keras | Product authenticity detection |
+| review_model.pkl | Fake review classification |
+| vectorizer.pkl | Text preprocessing and vectorization |
 
 ---
 
-# 📸 Application Screenshots
+# Application Preview
 
-> Add screenshots here after deployment.
+<div align="center">
 
-### Home Page
+| Home | Login |
+|------|-------|
+| <img src="screenshots/home.png" width="420"> | <img src="screenshots/login.png" width="420"> |
 
-<img src="screenshots/home.png" width="800">
+| Result Dashboard |
+|------------------|
+| <img src="screenshots/result.png" width="850"> |
 
-### Login Page
-
-<img src="screenshots/login.png" width="800">
-
-### Analysis Result
-
-<img src="screenshots/result.png" width="800">
+</div>
 
 ---
 
-# 🎯 Future Enhancements
+# Future Scope
 
 - QR Code Verification
 - Barcode Scanner
-- OCR-based Product Verification
+- OCR-based Product Analysis
+- Cloud Database
 - User Dashboard
 - Admin Dashboard
-- Product History
-- Cloud Database Integration
+- Analytics and Reporting
 
 ---
 
-# 👩‍💻 Author
+# Author
 
 **Sakshi Patel**
 
@@ -201,14 +185,6 @@ GitHub: https://github.com/vex-codex
 
 ---
 
-# 📄 License
+# License
 
-This project is licensed under the **MIT License**.
-
----
-
-<div align="center">
-
-### ⭐ If you found this project useful, consider giving it a star!
-
-</div>
+Distributed under the MIT License.
