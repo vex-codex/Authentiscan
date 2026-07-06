@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AuthentiScan - Product and Review Verification</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <div class="cursor-glow"></div>  
+    <div class="bg-orb orb1"></div>
+      <div class="bg-orb orb2"></div>
+         <div class="bg-orb orb3"></div>
+    <main class="shell">
+      <nav class="topbar" aria-label="Primary">
+        <a class="brand" href="#scanner" aria-label="AuthentiScan home">
+          <span class="brand-mark">A</span>
+          <span>AuthentiScan</span>
+        </a>
+        <div class="nav-links">
+          <a href="#product">Product</a>
+          <a href="#review">Review</a>
+          <a href="#history">History</a>
+        </div>
+        <div class="status-dot" id="statusDot" title="System status">
+          <span></span>
+          <strong id="statusText">Checking</strong>
+        </div>
+      </nav>
+
+      <section class="hero" id="scanner">
+        <div class="hero-copy">
+          <p class="eyebrow">AI authentication studio</p>
+          <h1>Verify products and reviews before trust costs you.</h1>
+          <p class="hero-text">
+            Upload a product image or inspect a customer review with your trained detection models. Every result is logged to PostgreSQL when your database is connected.
+          </p>
+        </div>
+        <aside class="hero-preview" aria-label="Live verification preview">
+          <div class="phone-frame">
+            <div class="phone-bar"></div>
+            <div class="lens"></div>
+            <div class="preview-stack">
+              <span class="scan-line"></span>
+              <div class="preview-card strong">
+                <small>Model signal</small>
+                <strong id="heroVerdict">Ready</strong>
+              </div>
+              <div class="preview-card">
+                <small>Confidence</small>
+                <strong id="heroConfidence">--</strong>
+              </div>
+              <div class="preview-card">
+                <small>Database</small>
+                <strong id="heroDatabase">Checking</strong>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </section>
+
+      <section class="workspace" aria-label="Detection workspace">
+        <article class="panel scanner-panel" id="product">
+          <div class="panel-heading">
+            <div>
+              <p class="eyebrow">Product detector</p>
+              <h2>Image authenticity</h2>
+            </div>
+            <span class="pill" id="productModelState">Model</span>
+          </div>
+
+          <form id="productForm" class="product-form">
+            <label class="dropzone" id="dropzone"></label>
+              <input id="productImage" name="image" type="file" accept="image/*" required />
+              <img id="imagePreview" alt="preview image" hidden />
+              <span class="drop-icon">+</span>
+              <strong>Upload product photo</strong>
+              <small>Adidas, Gucci, LV, Nike, and Puma classes are supported by the current trained model.</small>
+            </label>
+
+            <div class="field-grid">
+              <label>
+                Expected brand
+                <select id="expectedBrand" name="expected_brand" required>
+                  <option value="" selected disabled>Select brand</option>
+                  <option>Adidas</option>
+                  <option>Gucci</option>
+                  <option>LV</option>
+                  <option>Nike</option>
+                  <option>Puma</option>
+                </select>
+              </label>
+              <button class="primary-action" type="submit" id="scanBtn">Scan Product</button>
+            </div>
+          </form>
+
+          <section class="result-card" id="productResult" aria-live="polite">
+            <span class="result-kicker">Awaiting image</span>
+            <strong>No product scanned yet</strong>
+            <p>Choose a clear product image and run the detector.</p>
+          </section>
+        </article>
+
+        <article class="panel scanner-panel" id="review">
+          <div class="panel-heading">
+            <div>
+              <p class="eyebrow">Review detector</p>
+              <h2>Text authenticity</h2>
+            </div>
+            <span class="pill" id="reviewModelState">Model</span>
+          </div>
+
+          <form id="reviewForm" class="review-form">
+            <label>
+              Product name
+              <input id="productName" type="text" required placeholder="Example: Nike Air Max" />
+            </label>
+            <label>
+              Rating
+              <input id="reviewRating" type="number" min="1" max="5" step="0.5" placeholder="1-5" />
+            </label>
+            <label class="wide">
+              Review text
+              <textarea id="reviewText" required minlength="5" maxlength="5000" placeholder="Paste the real customer review here"></textarea>
+            </label>
+            <button class="primary-action wide" type="submit">Analyze Review</button>
+          </form>
+
+          <section class="result-card" id="reviewResult" aria-live="polite">
+            <span class="result-kicker">Awaiting review</span>
+            <strong>No review analyzed yet</strong>
+            <p>Paste an actual review. The app will not generate fake sample reviews.</p>
+          </section>
+        </article>
+      </section>
+
+      <section class="history-section" id="history">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">PostgreSQL audit trail</p>
+            <h2>Recent verification history</h2>
+          </div>
+          <button class="secondary-action" id="refreshHistory" type="button">Refresh</button>
+        </div>
+        <div class="history-list" id="historyList"></div>
+      </section>
+    </main>
+
+    <script src="/static/app.js" defer></script>
+  </body>
+</html>
